@@ -339,7 +339,7 @@ open class TurnByTurn(
     private var initialLongitude: Double? = null
 
     // val wayPoints: MutableList<Point> = mutableListOf()
-    private var navigationMode = DirectionsCriteria.PROFILE_DRIVING_TRAFFIC
+    private var navigationMode = DirectionsCriteria.PROFILE_CYCLING
     var simulateRoute = false
     private var mapStyleUrlDay: String? = null
     private var mapStyleUrlNight: String? = null

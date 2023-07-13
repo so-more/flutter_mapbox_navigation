@@ -42,6 +42,7 @@ import com.mapbox.navigation.core.trip.session.RouteProgressObserver
 import com.mapbox.navigation.dropin.map.MapViewObserver
 import com.mapbox.navigation.dropin.navigationview.NavigationViewListener
 import com.mapbox.navigation.utils.internal.ifNonNull
+import com.mapbox.api.directions.v5.DirectionsCriteria
 
 class NavigationActivity : AppCompatActivity() {
     private var finishBroadcastReceiver: BroadcastReceiver? = null
@@ -181,7 +182,7 @@ class NavigationActivity : AppCompatActivity() {
         MapboxNavigationApp.current()!!.requestRoutes(
             routeOptions = RouteOptions
                 .builder()
-                .applyDefaultNavigationOptions()
+                .applyDefaultNavigationOptions(DirectionsCriteria.PROFILE_CYCLING)
                 .applyLanguageAndVoiceUnitOptions(this)
                 .coordinatesList(waypointSet.coordinatesList())
                 .waypointIndicesList(waypointSet.waypointsIndices())
@@ -247,7 +248,7 @@ class NavigationActivity : AppCompatActivity() {
         MapboxNavigationApp.current()!!.requestRoutes(
             routeOptions = RouteOptions
                 .builder()
-                .applyDefaultNavigationOptions()
+                .applyDefaultNavigationOptions(DirectionsCriteria.PROFILE_CYCLING)
                 .applyLanguageAndVoiceUnitOptions(this)
                 .coordinatesList(addedWaypoints.coordinatesList())
                 .waypointIndicesList(addedWaypoints.waypointsIndices())
